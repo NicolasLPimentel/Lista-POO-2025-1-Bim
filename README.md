@@ -1,2 +1,2 @@
-# Lista-POO-2025-1-Bim
-Lista de exercícios em java do 1° bimestre.
+# Lista de exercícios POO2 do 1° bimestre
+Exercício escolar da disciplina Programação Orientada a Objetos 2
