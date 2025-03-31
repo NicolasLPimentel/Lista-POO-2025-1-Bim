@@ -1,35 +1,31 @@
 package ListaJava;
 
-public class ClassePrincipal extends Util {
+public class ClassePrincipal {
 
     public static void temperatura() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        float celsius = lerFloat("Insira a temperatura em C°:");
+        float celsius = Util.lerFloat("Insira a temperatura em C°:");
         float fahrenheit = celsius * 9 / 5 + 32;
         System.out.printf("\nC° para F° = %.2f" + fahrenheit);
-
-        fecharInput();
     }
 
     public static void salarioLiquido() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        float salario = lerFloat("Insira o salário bruto: ");
+        float salario = Util.lerFloat("Insira o salário bruto: ");
 
         float salarioL = salario - (salario * 0.085f);
 
         salarioL -= salarioL * 0.266f;
 
-        print("Salário Líquido: " + salarioL + "\nSalário Bruto: " + salario);
-
-        fecharInput();
+        Util.print("Salário Líquido: " + salarioL + "\nSalário Bruto: " + salario);
     }
 
     public static void brecho() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        float valorP = lerFloat("Insira o valor do Produto:");
+        float valorP = Util.lerFloat("Insira o valor do Produto:");
         float valorV;
 
         if (valorP < 50) {
@@ -37,18 +33,16 @@ public class ClassePrincipal extends Util {
         } else {
             valorV = valorP * 1.3f;
         }
-        print("O valor de venda do produto é: " + valorV);
-
-        fecharInput();
+        Util.print("O valor de venda do produto é: " + valorV);
     }
 
     public static void fidelidade() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        int livros = lerInt("Insira a quantia de livros comprados:");
+        int livros = Util.lerInt("Insira a quantia de livros comprados:");
 
         while (livros < 0) {
-            livros = lerInt("Insira um número válido:");
+            livros = Util.lerInt("Insira um número válido:");
         }
 
         int pontos;
@@ -66,27 +60,25 @@ public class ClassePrincipal extends Util {
                 pontos = 60;
         }
 
-        print("A sua pontuação é: " + pontos);
-
-        fecharInput();
+        Util.print("A sua pontuação é: " + pontos);
     }
 
     public static void calculadora() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int resposta = 1;
 
-        print("-----Calculadora-----");
+        Util.print("-----Calculadora-----");
 
         while (resposta == 1) {
 
-            float n = lerFloat("\nInsira um valor:");
-            float n2 = lerFloat("Insira outro valor:");
+            float n = Util.lerFloat("\nInsira um valor:");
+            float n2 = Util.lerFloat("Insira outro valor:");
 
-            print("\nSelecione a operação:");
-            print("1 - Soma (+)\n2 - Subtração (-)\n3 - Multiplicação (*)\n4 - Divisão (/)\n5 - Encerrar");
+            Util.print("\nSelecione a operação:");
+            Util.print("1 - Soma (+)\n2 - Subtração (-)\n3 - Multiplicação (*)\n4 - Divisão (/)\n5 - Encerrar");
 
-            int operacao = lerInt("");
+            int operacao = Util.lerInt("");
 
             float resultado = 0;
 
@@ -107,20 +99,19 @@ public class ClassePrincipal extends Util {
                     resposta = 0;
                     break;
                 default:
-                    print("Insira uma operação válida.");
+                Util.print("Insira uma operação válida.");
             }
 
             if (operacao >= 1 && operacao <= 4) {
-                print("Resultado: " + resultado);
+                Util.print("Resultado: " + resultado);
             }
         }
-        fecharInput();
     }
 
     public static void inss() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        float salario = lerFloat("Insira o salário:");
+        float salario = Util.lerFloat("Insira o salário:");
 
         if (salario > 600) {
             if (salario <= 1200) {
@@ -133,53 +124,47 @@ public class ClassePrincipal extends Util {
         }
 
         System.out.printf("\nO salário com desconto do INSS é R$%.2f" + salario);
-
-        fecharInput();
     }
 
     public static void idade() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        int idade = lerInt("Insira sua idade:");
+        int idade = Util.lerInt("Insira sua idade:");
 
         if (idade > 65) {
-            print("Você é idoso");
+            Util.print("Você é idoso");
         } else if (idade < 18) {
-            print("Você é menor de idade");
+            Util.print("Você é menor de idade");
         } else {
-            print("Você é maior de idade");
+            Util.print("Você é maior de idade");
         }
-
-        fecharInput();
     }
 
     public static void eleitor() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        int nascimento = lerInt("Insira seu ano de nascimento:");
-        int ano = lerInt("Insira o ano atual:");
+        int nascimento = Util.lerInt("Insira seu ano de nascimento:");
+        int ano = Util.lerInt("Insira o ano atual:");
         int idade = ano - nascimento;
 
         if (idade < ano) {
             if (idade < 16) {
-                print("Você não é eleitor");
+                Util.print("Você não é eleitor");
             } else if (idade < 18 || idade > 65) {
-                print("Você é eleitor facultativo");
+                Util.print("Você é eleitor facultativo");
             } else {
-                print("Você é eleitor obrigatório");
+                Util.print("Você é eleitor obrigatório");
             }
         } else {
-            print("Data de nascimento inválida");
+            Util.print("Data de nascimento inválida");
         }
-
-        fecharInput();
     }
 
     public static void planoSaude() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        String nome = lerString("Insira seu nome:");
-        int idade = lerInt("Insira sua idade:");
+        String nome = Util.lerString("Insira seu nome:");
+        int idade = Util.lerInt("Insira sua idade:");
 
         int valor;
 
@@ -197,56 +182,48 @@ public class ClassePrincipal extends Util {
             valor = 400;
         }
 
-        print(nome + ", você deve pagar R$" + valor + " pelo plano de saúde");
-
-        fecharInput();
+        Util.print(nome + ", você deve pagar R$" + valor + " pelo plano de saúde");
     }
 
     public static void notas() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int soma = 0;
         int resposta = 1;
 
         do {
-            soma += lerInt("Insira a nota:");
-            resposta = lerInt("Deseja adicionar outra nota? Digite 1 (sim) ou 2 (não):");
+            soma += Util.lerInt("Insira a nota:");
+            resposta = Util.lerInt("Deseja adicionar outra nota? Digite 1 (sim) ou 2 (não):");
         } while (resposta == 1);
 
-        print("Somatório das notas: " + soma);
-
-        fecharInput();
+        Util.print("Somatório das notas: " + soma);
     }
 
     public static void tabuada() {
-        iniciarInput();
+        Util.iniciarInput();
 
-        int n = lerInt("Digite um numero para formar sua tabuada:");
+        int n = Util.lerInt("Digite um numero para formar sua tabuada:");
 
         for (int x = 1; x <= 10; x++) {
-            print(n + "x" + x + " = " + x * n);
+            Util.print(n + "x" + x + " = " + x * n);
         }
-
-        fecharInput();
     }
 
     public static void somaSucessiva() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int mult = 0;
         int x = 1;
 
-        int n = lerInt("Digite um numero: ");
-        int n2 = lerInt("Digite outro numero: ");
+        int n = Util.lerInt("Digite um numero: ");
+        int n2 = Util.lerInt("Digite outro numero: ");
 
         while (x <= n) {
             mult += n2;
             x++;
         }
 
-        print("Resultado da multiplicação: " + mult);
-
-        fecharInput();
+        Util.print("Resultado da multiplicação: " + mult);
     }
 
     public static void somaDivPor4Menor200() {
@@ -261,16 +238,16 @@ public class ClassePrincipal extends Util {
             x++;
         }
 
-        print("Resultado da soma dos numeros inteiros divisiveis por 4 menores que 200: " + soma);
+        Util.print("Resultado da soma dos numeros inteiros divisiveis por 4 menores que 200: " + soma);
     }
 
     public static void fatorial() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int fat = 1;
         int x = 1;
 
-        int n = lerInt("Insira um numero para ser calculado o fatorial:");
+        int n = Util.lerInt("Insira um numero para ser calculado o fatorial:");
 
         while (x <= n) {
             fat *= x;
@@ -278,19 +255,17 @@ public class ClassePrincipal extends Util {
 
         }
 
-        print("Resultado do fatorial: " + fat);
-
-        fecharInput();
+        Util.print("Resultado do fatorial: " + fat);
     }
 
     public static void fibonacci() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int ant = 0;
         int at = 1;
         int prox = ant + at;
 
-        int n = lerInt("insira o enésimo valor da serie de fibonacci:");
+        int n = Util.lerInt("insira o enésimo valor da serie de fibonacci:");
 
         for (int x = 1; x < n; x++) {
             ant = at;
@@ -298,13 +273,11 @@ public class ClassePrincipal extends Util {
             prox = ant + at;
         }
 
-        print("Resultado : " + at);
-
-        fecharInput();
+        Util.print("Resultado : " + at);
     }
 
     public static void mediaMaiorMenor() {
-        iniciarInput();
+        Util.iniciarInput();
 
         int maior = Integer.MIN_VALUE;
         int menor = Integer.MAX_VALUE;
@@ -314,11 +287,11 @@ public class ClassePrincipal extends Util {
         do {
             int media = 0;
 
-            media += lerInt("insira a primeira nota do aluno:");
-            media += lerInt("insira a segunda nota do aluno:");
+            media += Util.lerInt("insira a primeira nota do aluno:");
+            media += Util.lerInt("insira a segunda nota do aluno:");
             media /= 2;
 
-            print("Média do aluno: " + media);
+            Util.print("Média do aluno: " + media);
 
             if (media <= menor) {
                 menor = media;
@@ -328,22 +301,20 @@ public class ClassePrincipal extends Util {
                 maior = media;
             }
 
-            resposta = lerInt("Deseja continuar ? sim (1) não (2)");
+            resposta = Util.lerInt("Deseja continuar ? sim (1) não (2)");
 
         } while (resposta == 1);
 
-        print("A maior média foi : " + maior);
-        print("A menor média foi : " + menor);
-
-        fecharInput();
+        Util.print("A maior média foi : " + maior);
+        Util.print("A menor média foi : " + menor);
     }
 
     public static void main(String[] args) {
-        iniciarInput();
+        Util.iniciarInput();
 
-        print("Selecione o algoritmo a ser executado:");
-        print("\nDigite:\n");
-        print("Celsius para Fahrenheit --- (1)\n "
+        Util.print("Selecione o algoritmo a ser executado:");
+        Util.print("\nDigite:\n");
+        Util.print("Celsius para Fahrenheit --- (1)\n "
                 + "Calcular salário líquido --- (2)\n"
                 + "Preço de venda de produto do brechó --- (3)\n"
                 + "Pontos de fidelidade da livraria --- (4)\n"
@@ -360,7 +331,7 @@ public class ClassePrincipal extends Util {
                 + "Fibonacci --- (15)\n"
                 + "Menor e maior média dos alunos --- (16)\n");
 
-        int resposta = lerInt("");
+        int resposta = Util.lerInt("");
 
         switch (resposta) {
             case 1:
@@ -412,10 +383,10 @@ public class ClassePrincipal extends Util {
                 mediaMaiorMenor();
                 break;
             default:
-                resposta = lerInt("Insira uma opção válida");
+                resposta = Util.lerInt("Insira uma opção válida");
                 break;
         }
 
-        fecharInput();
+        Util.fecharInput();
     }
 }
